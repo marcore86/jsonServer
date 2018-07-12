@@ -1,0 +1,20 @@
+{
+  "extends": [
+    "@fr-esco/tslint-config",
+    "tslint-sonarts"
+  ],
+  "rules": {
+    "file-header": [
+      true,
+      "© \\d{4} Walgreens Boots Alliance, Inc.",
+      "© 2018 Walgreens Boots Alliance, Inc."
+    ],
+    "no-implicit-dependencies": false,
+    "no-submodule-imports": [
+      true,
+      "faker",
+      "@generators",
+      "@models"
+    ]
+  }
+}

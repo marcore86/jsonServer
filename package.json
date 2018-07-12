@@ -1,0 +1,57 @@
+{
+  "name": "rx-renewal-node-mock",
+  "version": "1.0.0",
+  "description": "Mock for Dev (node.js)",
+  "main": "lib/index",
+  "types": "lib/index",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "lint": "run-p lint:*",
+    "lint:ts": "tslint -p tsconfig.json --fix -t stylish -e \"**/*.json\" -e \"src/models/**/*.ts\"",
+    "serve": "env-cmd .env json-server -w server/db.json --routes server/routes.json -S server/snapshots -m server/middleware.js",
+    "refresh": "env-cmd .env ts-node-dev --respawn --no-deps -r tsconfig-paths/register src/index.ts",
+    "postinstall": "npm run warning -s",
+    "start": "run-p refresh serve",
+    "prepush": "run-s lint",
+    "tasks": "npm-scripts-help",
+    "warning": "chalk -t \"This project is meant to be run locally {red.bold only}\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://oneit.wba.com/versioncontrol/scm/rxrenpoc/rx-renewal-node-mock.git"
+  },
+  "keywords": [
+    "dev",
+    "node",
+    "nodejs",
+    "mock"
+  ],
+  "author": "Francesco Colamonici <Francesco.Colamonici@alliance-healthcare.net>",
+  "license": "UNLICENSED",
+  "engines": {
+    "node": "^8.9.3",
+    "npm": "^5.5.1"
+  },
+  "devDependencies": {
+    "@fr-esco/tslint-config": "^1.1.0",
+    "@types/faker": "^4.1.2",
+    "@types/node": "^8.10.20",
+    "chalk-cli": "^4.0.0",
+    "env-cmd": "^8.0.2",
+    "husky": "^0.14.3",
+    "npm-run-all": "^4.1.3",
+    "npm-scripts-help": "^0.8.0",
+    "ts-node": "^6.1.2",
+    "ts-node-dev": "^1.0.0-pre.26",
+    "tsconfig-paths": "^3.4.1",
+    "tslint": "^5.10.0",
+    "tslint-config-standard": "^7.1.0",
+    "tslint-sonarts": "^1.7.0",
+    "typescript": "^2.9.2"
+  },
+  "dependencies": {
+    "faker": "^4.1.0",
+    "json-server": "^0.14.0",
+    "tslib": "^1.9.3"
+  }
+}

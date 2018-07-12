@@ -1,0 +1,21 @@
+{
+  "extends": "./tsconfig-base.json",
+  "compilerOptions": {
+    "baseUrl": "src",
+    "paths": {
+      "@generators/*": [
+        "generators/*"
+      ],
+      "@models/*": [
+        "models/*"
+      ]
+    }
+  },
+  "include": [
+    "custom-typings",
+    "src"
+  ],
+  "exclude": [
+    "**/*.spec.ts"
+  ]
+}

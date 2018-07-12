@@ -1,0 +1,5 @@
+{
+  "/api/*": "/$1",
+  "/*-bff/*": "/$2",
+  "/settings/:setting": "/settings?key=:setting"
+}
